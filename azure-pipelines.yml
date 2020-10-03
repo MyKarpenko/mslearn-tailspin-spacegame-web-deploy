@@ -88,6 +88,10 @@ stages:
       inputs: 
         version: 2.2.100
 
+    - task: UseDotNet@2
+      displayName: 'Use .NET Core sdk 2.0.7'
+      inputs: 
+        version: 2.0.7
     - task: VSBuild@1
       displayName: 'Build the database project'
       inputs:
