@@ -23,6 +23,12 @@ stages:
 
 
     steps:
+
+    - task: PowerShell@2
+      inputs:
+        targetType: 'inline'
+        script: 'git -c http.extraheader="AUTHORIZATION: bearer $(System.AccessToken)" clone --depth 1 github.com:MyKarpenko/mslearn-tailspin-spacegame-web-deploy.git'
+
     - task: UseDotNet@2
       displayName: 'Use .NET Core SDK $(dotnetSdkVersion)'
       inputs:
